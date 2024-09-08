@@ -4,12 +4,20 @@ import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/c
 import { provideRouter, RouterModule } from '@angular/router';
 import { importProvidersFrom } from '@angular/core';
 import { ProductComponent } from './app/components/product/product.component';
+import { provideToastr, ToastrModule } from 'ngx-toastr';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { CartSummaryComponent } from './app/components/cart-summary/cart-summary.component';
 
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideHttpClient(withFetch()),
-    importProvidersFrom(),
+    provideAnimations(),
+    provideToastr({
+      timeOut: 5000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: false,
+    }), 
     provideRouter([
       {path:"",pathMatch:"full",component:ProductComponent},
       {path:"products",component:ProductComponent},
