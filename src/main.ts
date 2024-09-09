@@ -4,9 +4,11 @@ import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/c
 import { provideRouter, RouterModule } from '@angular/router';
 import { importProvidersFrom } from '@angular/core';
 import { ProductComponent } from './app/components/product/product.component';
-import { provideToastr, ToastrModule } from 'ngx-toastr';
+import { provideToastr } from 'ngx-toastr';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { CartSummaryComponent } from './app/components/cart-summary/cart-summary.component';
+import { ProductAddComponent } from './app/components/product-add/product-add.component';
+import { LoginComponent } from './app/components/login/login.component';
 
 
 bootstrapApplication(AppComponent, {
@@ -21,7 +23,9 @@ bootstrapApplication(AppComponent, {
     provideRouter([
       {path:"",pathMatch:"full",component:ProductComponent},
       {path:"products",component:ProductComponent},
-      {path:"products/category/:categoryId",component:ProductComponent}
+      {path:"products/category/:categoryId",component:ProductComponent},
+      {path:"products/add",component:ProductAddComponent},
+      {path:"login",component:LoginComponent}
 
     ])
   ]

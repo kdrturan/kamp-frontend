@@ -7,8 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NaviComponent } from './components/navi/navi.component';
 import { CategoryComponent } from './components/category/category.component';
 import { ProductComponent } from './components/product/product.component';
-import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -16,7 +16,7 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
   standalone: true,
   imports: [RouterLink,RouterLinkActive,RouterOutlet,RouterModule,
             CommonModule, NaviComponent, CategoryComponent, ProductComponent,
-            HttpClientModule,CartSummaryComponent],
+            HttpClientModule,CartSummaryComponent,ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

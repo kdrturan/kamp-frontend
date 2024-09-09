@@ -18,7 +18,7 @@ export class CartSummaryComponent implements OnInit{
   cartItems:CartItem[] = []
   
   constructor(private cartService:CartService,
-    private toastrService:ToastrService
+    //private toastrService:ToastrService
   ){}
 
   ngOnInit():void{
@@ -31,7 +31,7 @@ export class CartSummaryComponent implements OnInit{
 
   removeFromCart(product:Product){
     this.cartService.removeFromCart(product)
-    this.toastrService.success("Silindi",product.productName + "Sepetten silindi")
+    //this.toastrService.success("Silindi",product.productName + "Sepetten silindi")
   }
 
 }
